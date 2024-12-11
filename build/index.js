@@ -11,8 +11,12 @@ const routers = require('./router/processData.js');
 app.use('/apis/data', routers);
 // 
 const { dataClie } = require("./database/data.js");
+const data = require("./database/data.js");
 app.get('/', (_rep, res) => {
     res.json("wolcame to the apis");
+});
+app.get('/apis', (_rep, res) => {
+    res.json(data);
 });
 app.get('/apis/data', (_rep, res) => {
     return res.json(dataClie);

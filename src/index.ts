@@ -11,9 +11,13 @@ app.use('/apis/data', routers)
 
 // 
 const { dataClie } = require("./database/data.ts");
+const data = require("./database/data.ts");
 
 app.get('/', (_rep: any, res: any) => {
     res.json("wolcame to the apis");
+});
+app.get('/apis', (_rep: any, res: any) => {
+    res.json(data);
 });
 
 app.get('/apis/data', (_rep: any, res: any) => {
